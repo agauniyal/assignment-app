@@ -4,7 +4,11 @@ var Account = require('../models/account');
 var router = express.Router();
 
 var collegeJson = require('../data/college');
-var degreeJson = require('../data/degree');
+
+var colleges = [];
+collegeJson.forEach(function(el, index, array) {
+  colleges.push(el.name);
+});
 
 // TODO: Refactor router into routes and controller
 
@@ -25,7 +29,17 @@ router.get('/', function(req, res) {
 router.get('/data/college', function(req, res) {
 
   if (req.user) {
-    res.json(collegeJson);
+    if (req.query.college) {
+
+      var collegeName = req.query.college;
+      var degrees = [];
+      collegeJson.find(function(el, i, arr) {
+        if (el.name === collegeName) {
+          degrees = el.degrees;
+        }
+      });
+      res.json(degrees);
+    } else { res.json(colleges); }
   } else {
     res.status(401).send('Unauthorized').end();
   }

@@ -1,25 +1,272 @@
-{
-  "college": [
-    "Acharya Narendra Dev College",
-    "Aditi Mahavidyalaya",
-    "Aryabhatta College",
-    "Atma Ram Sanatan Dharma College",
-    "Hans Raj College",
-    "Hindu College",
-    "Indraprastha College for Women",
-    "Institute of Home Economics",
-    "Janki Devi Memorial College",
-    "Jesus & Mary College",
-    "Kalindi College",
-    "Nehru Homeopathic Medical College",
-    "Netaji Subhas Institute of Technology",
-    "Rajdhani College",
-    "Ram Lal Anand College",
-    "Ramanujan College",
-    "Ramjas College",
-    "Satyawati College",
-    "School of Open Learning",
-    "Shahid Bhagat Singh College",
-    "Shaheed Sukhdev College of Business Studies"
-  ]
-}
+[
+	{
+		"name": "Acharya Narendra Dev College",
+		"degrees": [
+			"Accounting",
+			"Aerospace Studies",
+			"Agricultural Economics",
+			"American Studies",
+			"Animal and Dairy Sciences"
+		]
+	},
+	{
+		"name": "Aditi Mahavidyalaya",
+		"degrees": [
+			"Chinese",
+			"Climate Change and Energy",
+			"Computer Science",
+			"Criminal Justice",
+			"Crop Biotechnology",
+			"Economics",
+			"English"
+		]
+	},
+	{
+		"name": "Aryabhatta College",
+		"degrees": [
+			"Environmental Studies",
+			"Finance",
+			"Food Science",
+			"French",
+			"General Theatre Studies",
+			"Geographic Information Science",
+			"Geography",
+			"Geology"
+		]
+	},
+	{
+		"name": "Atma Ram Sanatan Dharma College",
+		"degrees": [
+			"Biology",
+			"Biomathematics",
+			"Business",
+			"Chemistry",
+			"Chinese",
+			"Climate Change and Energy",
+			"Computer Science",
+			"Criminal Justice",
+			"Crop Biotechnology",
+			"Economics"
+		]
+	},
+	{
+		"name": "Hans Raj College",
+		"degrees": [
+			"Climate Change and Energy",
+			"Computer Science",
+			"Criminal Justice",
+			"Crop Biotechnology",
+			"French",
+			"General Theatre Studies",
+			"Geographic Information Science"
+		]
+	},
+	{
+		"name": "Hindu College",
+		"degrees": [
+			"Animal and Dairy Sciences",
+			"Anthropology",
+			"Art",
+			"Biology",
+			"Biomathematics"
+		]
+	},
+	{
+		"name": "Indraprastha College for Women",
+		"degrees": [
+			"Animal and Dairy Sciences",
+			"Anthropology",
+			"Art",
+			"Biology",
+			"Biomathematics"
+		]
+	},
+	{
+		"name": "Institute of Home Economics",
+		"degrees": [
+			"Climate Change and Energy",
+			"Computer Science",
+			"Criminal Justice",
+			"Crop Biotechnology",
+			"Economics",
+			"English",
+			"Entrepreneurship",
+			"Environmental and Natural Resource Economics",
+			"Environmental Studies",
+			"Finance",
+			"Food Science",
+			"French",
+			"General Theatre Studies",
+			"Geographic Information Science"
+		]
+	},
+	{
+		"name": "Janki Devi Memorial College",
+		"degrees": [
+			"Biology",
+			"Biomathematics",
+			"Business",
+			"Chemistry",
+			"Chinese",
+			"Climate Change and Energy",
+			"Computer Science",
+			"Criminal Justice",
+			"Crop Biotechnology",
+			"Economics"
+		]
+	},
+	{
+		"name": "Jesus & Mary College",
+		"degrees": [
+			"Accounting",
+			"Aerospace Studies",
+			"Agricultural Economics",
+			"American Studies",
+			"Animal and Dairy Sciences"
+		]
+	},
+	{
+		"name": "Kalindi College",
+		"degrees": [
+			"Climate Change and Energy",
+			"Computer Science",
+			"Criminal Justice",
+			"Crop Biotechnology",
+			"Economics",
+			"English",
+			"Entrepreneurship",
+			"Environmental and Natural Resource Economics",
+			"Environmental Studies",
+			"Finance",
+			"Food Science",
+			"French",
+			"General Theatre Studies",
+			"Geographic Information Science"
+		]
+	},
+	{
+		"name": "Nehru Homeopathic Medical College",
+		"degrees": [
+			"Animal and Dairy Sciences",
+			"Anthropology",
+			"Art",
+			"Biology",
+			"Biomathematics"
+		]
+	},
+	{
+		"name": "Netaji Subhas Institute of Technology",
+		"degrees": [
+			"Biology",
+			"Biomathematics",
+			"Business",
+			"Chemistry",
+			"Chinese",
+			"Climate Change and Energy",
+			"Computer Science",
+			"Criminal Justice",
+			"Crop Biotechnology",
+			"Economics"
+		]
+	},
+	{
+		"name": "Rajdhani College",
+		"degrees": [
+			"Chinese",
+			"Climate Change and Energy",
+			"Computer Science",
+			"Criminal Justice",
+			"Crop Biotechnology",
+			"Economics",
+			"English"
+		]
+	},
+	{
+		"name": "Ram Lal Anand College",
+		"degrees": [
+			"Biology",
+			"Biomathematics",
+			"Business",
+			"Chemistry",
+			"Chinese",
+			"Climate Change and Energy",
+			"Computer Science",
+			"Criminal Justice",
+			"Crop Biotechnology",
+			"Economics"
+		]
+	},
+	{
+		"name": "Ramanujan College",
+		"degrees": [
+			"Environmental Studies",
+			"Finance",
+			"Food Science",
+			"French",
+			"General Theatre Studies",
+			"Geographic Information Science",
+			"Geography",
+			"Geology"
+		]
+	},
+	{
+		"name": "Ramjas College",
+		"degrees": [
+			"Accounting",
+			"Aerospace Studies",
+			"Agricultural Economics",
+			"American Studies",
+			"Animal and Dairy Sciences"
+		]
+	},
+	{
+		"name": "Satyawati College",
+		"degrees": [
+			"Biology",
+			"Biomathematics",
+			"Business",
+			"Chemistry",
+			"Chinese",
+			"Climate Change and Energy",
+			"Computer Science",
+			"Criminal Justice",
+			"Crop Biotechnology",
+			"Economics"
+		]
+	},
+	{
+		"name": "School of Open Learning",
+		"degrees": [
+			"Chinese",
+			"Climate Change and Energy",
+			"Computer Science",
+			"Criminal Justice",
+			"Crop Biotechnology",
+			"Economics",
+			"English"
+		]
+	},
+	{
+		"name": "Shahid Bhagat Singh College",
+		"degrees": [
+			"Environmental Studies",
+			"Finance",
+			"Food Science",
+			"French",
+			"General Theatre Studies",
+			"Geographic Information Science",
+			"Geography",
+			"Geology"
+		]
+	},
+	{
+		"name": "Shaheed Sukhdev College of Business Studies",
+		"degrees": [
+			"Accounting",
+			"Aerospace Studies",
+			"Agricultural Economics",
+			"American Studies",
+			"Animal and Dairy Sciences"
+		]
+	}
+]
