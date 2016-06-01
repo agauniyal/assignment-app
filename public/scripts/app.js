@@ -1,6 +1,30 @@
-var app = angular.module('assignment-app', ['autocomplete']);
+var app = angular.module('assignment-app', ['autocomplete', 'ngRoute']);
 
-// the service that retrieves some movie title from an url
+app.config(function($routeProvider) {
+  $routeProvider
+    .when('/about', {
+      templateUrl: 'about.html',
+      controller: aboutController
+    })
+    .otherwise({
+      redirectTo: '/'
+    });
+
+  function aboutController($scope, $http) {
+    $http({
+      method: 'GET',
+      url: '/profile'
+    }).then(function mySuccess(response) {
+
+      $scope.username = response.data.username;
+      $scope.college = response.data.college;
+      $scope.degree = response.data.degree;
+    }, function myError(response) {
+      console.log('Error while retrieving colleges data');
+    });
+  }
+});
+
 app.factory('collegesRet', function($http, $q, $timeout) {
   var collegesRet = new Object();
 
@@ -11,7 +35,7 @@ app.factory('collegesRet', function($http, $q, $timeout) {
     $http({
       method: 'GET',
       url: '/data/college'
-    }).then(function mySucces(response) {
+    }).then(function mySuccess(response) {
       colleges = response.data.college;
     }, function myError(response) {
       console.log('Error while retrieving colleges data');

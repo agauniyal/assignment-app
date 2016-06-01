@@ -7,7 +7,7 @@ Todo:
 - [ ] Add relation b/w colleges and degrees. (aka migrate to embedded docs)
 > Currently I have seperate degrees and seperate colleges.
 
-- [ ] Add angular route to frontend
+- [x] Add angular route to frontend
 > Reading ..
 
 - [ ] iterate over error during validation, instead of just printing first (easy-peasy)
