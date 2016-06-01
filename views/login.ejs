@@ -1,0 +1,20 @@
+<% include header %>
+
+<body>
+  <div class="container">
+
+  <% if(! (typeof(error) === "undefined") ) { %>
+    <h3> <%= error %>. </h3>
+  <% } %>
+
+    <h1>Login Page</h1>
+    <form action="/login" method="post">
+      <input type="text" name="username" placeholder="Enter Username" />
+      <input type="password" name="password" placeholder="Password" />
+      <button type="submit">Login</button>
+    </form>
+    <br>Or you can
+    <a href="/register">Register</a>.
+  </div>
+</body>
+</html>

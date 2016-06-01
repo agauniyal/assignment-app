@@ -1,0 +1,141 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: 'Ubuntu', sans-serif;
+  background: #263948;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: #eee;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  text-align: center;
+}
+
+h2 {
+  color: #fff;
+  background-color: #8c98a7;
+  padding: 5px 10px;
+}
+
+h3 {
+  color: #fff;
+  background-color: #db6460;
+  padding: 5px 10px;
+}
+
+
+a {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: .9rem;
+  text-decoration: none;
+  color: #FFFFFF;
+  text-align: left;
+}
+
+.container {
+  margin: 100px auto 0;
+  width: 500px;
+}
+
+form {
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #db6460;
+  margin: 5px 0;
+  color: #eee;
+  font-size: 1rem;
+}
+
+button {
+  text-transform: uppercase;
+  padding: 5px;
+  background: transparent;
+  border: 1px solid #db6460;
+  margin: 5px 0;
+  color: #eee;
+  font-size: 0.9rem;
+}
+
+.autocomplete {
+  width: 100%;
+  position: relative;
+}
+
+.autocomplete input {
+  width: 100%;
+  padding: 0.7rem;
+}
+
+.autocomplete ul {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border: 2px solid #111;
+  background-color: #fff;
+  z-index: 1;
+  color: #222;
+}
+
+.autocomplete li {
+  list-style: none;
+  width: 100%;
+  padding: 0.4em;
+  background-color: #fff;
+}
+
+.autocomplete li.active {
+  width: 100%;
+  background-color: #4bf;
+  cursor: pointer;
+}
+
+.autocomplete .highlight {
+  background-color: #E2E2E2;
+}
+
+.autocomplete li.active .highlight {
+  background: #666;
+  color: #000;
+}
+
+.main{
+  border: 2px solid #222;
+  padding: 10px;
+  margin: 10px auto;
+  box-shadow: 3px 2px 4px 0 rgba(1,1,1,0.5);
+}
+
+.hide{
+  display: none;
+}
+
+button{
+  cursor: pointer;
+}

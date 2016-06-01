@@ -1,0 +1,55 @@
+<% include header %>
+
+<body>
+  <div class="container">
+
+  <% if(! (typeof(error) === "undefined") ) { %>
+    <h3> <%= error %>. </h3>
+  <% } %>
+
+    <% if(!(typeof(user) === "undefined")) { %>
+      <p>Welcome <%= user.username %><br>
+      <% if(user.college) { %>
+          You are from <%= user.college %> and pursuing <%= user.degree %>.
+      <% } %>
+      </p>
+    <a href="/Logout"> Logout </a>
+
+    <div ng-controller="MyCtrl"
+      <% if(user.completedProfile == true) { %>
+        class="ng-hide"
+      <% } %>
+    >
+      <div class="main" id="shouldHide">
+        <form action="/profile" method="post">
+          <autocomplete ng-model="resultC" attr-placeholder="type to search colleges..." click-activation="true" data="colleges"></autocomplete>
+          <autocomplete ng-model="resultD" attr-placeholder="type to search degrees..." click-activation="true" data="degrees"></autocomplete>
+          <input type="text" name="college" ng-model="resultC" class="hide">
+          <input type="text" name="degree" ng-model="resultD" class="hide">
+          <button type="submit">Update</button>
+          <button type="button" onClick="hide('shouldHide')">Close</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/autocomplete.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript">
+      function hide(h) {
+        var el = document.getElementById(h);
+        el.style.display = 'none';
+      }
+    </script>
+
+<% } else{ %>
+    <h2> Temporary gateway for Login and Register URLs. </h2>
+    <p>
+      <a href="/login"> Login </a> <br>
+     <a href="/register"> Register </a>
+    </p>
+<% } %>
+    </div>
+  </body>
+
+  </html>
