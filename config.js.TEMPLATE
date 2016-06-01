@@ -1,0 +1,5 @@
+module.exports = {
+	database:{
+		url: 'mongodb://<user>:<password>@<host>:<port>/<name>'
+	}
+};
