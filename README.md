@@ -1,14 +1,12 @@
 # assignment-app
-Tada!
-
 
 Todo:
 
-- [x] Add relation b/w colleges and degrees. (aka migrate to embedded docs)
-> Currently I have seperate degrees and seperate colleges.
+- [x] ~~Add relation b/w colleges and degrees. (aka migrate to embedded docs)~~
+> ~~Currently I have seperate degrees and seperate colleges.~~
 
-- [x] Add angular route to frontend
-> Reading ..
+- [x] ~~Add angular route to frontend~~
+> ~~Reading ..~~
 
 - [ ] iterate over error during validation, instead of just printing first (easy-peasy)
 > Priority low - use a loop in ejs over errors and send error[] instead of error[0]
