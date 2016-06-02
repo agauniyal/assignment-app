@@ -105,15 +105,27 @@ router.get('/login', function(req, res) {
   }
 });
 
-router.post('/login', passport.authenticate('local', {
-  successRedirect: '/',
-  failureRedirect: '/login?err=login error'
-}), function(req, res) {
+router.post('/login', function(req, res, next) {
 
-  // TODO: Better login error messages
-  // can be done with custom callbacks
+  req.checkBody('username', 'Username is required').notEmpty();
+  req.checkBody('password', 'Password is required').notEmpty();
 
-  res.redirect('/');
+  var errors = req.validationErrors();
+  if (errors) {
+    return res.render('login', { error: errors[0].msg });
+  }
+
+  passport.authenticate('local', function(err, user, info) {
+    if (err) {
+      return next(err); }
+    if (!user) {
+      return res.render('login', { error: info.message }); }
+    req.logIn(user, function(err) {
+      if (err) {
+        return next(err); }
+      return res.redirect('/');
+    });
+  })(req, res, next);
 });
 
 router.get('/profile', function(req, res) {
@@ -147,14 +159,10 @@ router.post('/profile', function(req, res) {
     }
   });
 
-  console.log(degreeName);
-  console.log(degrees);
-
   // convert to lowercase and compare
   degrees = degrees.join(',').toLowerCase().split(',');
-  console.log(degrees);
+
   var checkIndex = degrees.indexOf(degreeName);
-  console.log(checkIndex);
 
   if (checkIndex == -1) {
     return res.render('index', { error: "College and degree don't match", user: req.user });

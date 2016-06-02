@@ -17,5 +17,7 @@ Todo:
 - [ ] append get parameters to redirect to fill previously filled form elements
 > priority low - send get param and read them and place into <input>'s value=""
 
+- [x] ~~better error messages on login error~~
+
 - [ ] TESTS!!
 > Like this - https://github.com/agauniyal/bookapi/blob/master/tests/bookControllerTests.js .
