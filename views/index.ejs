@@ -17,18 +17,28 @@
     <a href="#/about"> About </a> |
     <a href="/Logout"> Logout </a> |
 
-    <div ng-controller="MyCtrl"
+    <div
 <% if(user.completedProfile == true) { %>
-        class="ng-hide"
+        class="hide"
 <% } %>
     >
       <div class="main" id="shouldHide">
-        <form action="/profile" method="post">
-          <autocomplete ng-model="resultC" attr-placeholder="type to search colleges..." click-activation="true" data="colleges"></autocomplete>
-          <autocomplete ng-model="resultD" attr-placeholder="type to search degrees..." click-activation="true" data="degrees"></autocomplete>
-          <!-- Hack to send form data since autocomplete dosen't support it -->
-          <input type="text" name="college" ng-model="resultC" class="hide">
-          <input type="text" name="degree" ng-model="resultD" class="hide">
+        <form action="/profile" method="post" autocomplete="off">
+
+          <div class="autoCmplBox" ng-controller="autoCompleteCTRL">
+            <input type="text" placeholder="Search for items" id="collegeField" ng-keydown="checkKeyDown($event)" ng-keyup="checkKeyUp($event)" ng-model="searchText" ng-change="search('college')" name="college" />
+              <ul class="suggestions-list">
+                <li ng-repeat="suggestion in suggestions track by $index" ng-class="{active : selectedIndex === $index}" ng-click="AssignValueAndHide($index)">{{suggestion}}</li>
+              </ul>
+          </div>
+
+          <div class="autoCmplBox" ng-controller="autoCompleteCTRL">
+            <input type="text" placeholder="Search for items" id="degreeField" ng-keydown="checkKeyDown($event)" ng-keyup="checkKeyUp($event)" ng-model="searchText" ng-change="search('degree')" name="degree" />
+            <ul class="suggestions-list">
+              <li ng-repeat="suggestion in suggestions track by $index" ng-class="{active : selectedIndex === $index}" ng-click="AssignValueAndHide($index)">{{suggestion}}</li>
+            </ul>
+          </div>
+
           <button type="submit">Update</button>
           <button type="button" onClick="hide('shouldHide')">Close</button>
         </form>
@@ -43,7 +53,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-route.min.js"></script>
-    <script type="text/javascript" src="scripts/autocomplete.js"></script>
     <script type="text/javascript" src="scripts/app.js"></script>
     <script type="text/javascript">
       function hide(h) {

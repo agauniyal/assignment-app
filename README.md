@@ -4,7 +4,7 @@ Tada!
 
 Todo:
 
-- [ ] Add relation b/w colleges and degrees. (aka migrate to embedded docs)
+- [x] Add relation b/w colleges and degrees. (aka migrate to embedded docs)
 > Currently I have seperate degrees and seperate colleges.
 
 - [x] Add angular route to frontend

@@ -7,7 +7,7 @@ var collegeJson = require('../data/college');
 
 var colleges = [];
 collegeJson.forEach(function(el, index, array) {
-  colleges.push(el.name);
+  colleges.push(el.name.toLowerCase());
 });
 
 // TODO: Refactor router into routes and controller
@@ -31,10 +31,10 @@ router.get('/data/college', function(req, res) {
   if (req.user) {
     if (req.query.college) {
 
-      var collegeName = req.query.college;
+      var collegeName = req.query.college.toLowerCase();
       var degrees = [];
       collegeJson.find(function(el, i, arr) {
-        if (el.name === collegeName) {
+        if (el.name.toLowerCase() === collegeName) {
           degrees = el.degrees;
         }
       });
@@ -135,6 +135,29 @@ router.post('/profile', function(req, res) {
   var errors = req.validationErrors();
   if (errors) {
     return res.render('index', { error: errors[0].msg, user: req.user });
+  }
+
+  var collegeName = req.body.college.toLowerCase();
+  var degreeName = req.body.degree;
+
+  var degrees = [];
+  collegeJson.find(function(el, i, arr) {
+    if (el.name.toLowerCase() === collegeName.toLowerCase()) {
+      degrees = el.degrees;
+    }
+  });
+
+  console.log(degreeName);
+  console.log(degrees);
+
+  // convert to lowercase and compare
+  degrees = degrees.join(',').toLowerCase().split(',');
+  console.log(degrees);
+  var checkIndex = degrees.indexOf(degreeName);
+  console.log(checkIndex);
+
+  if (checkIndex == -1) {
+    return res.render('index', { error: "College and degree don't match", user: req.user });
   }
 
   // find and update(save)
