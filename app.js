@@ -9,9 +9,6 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-// load db url
-var config = require('./config');
-
 var routes = require('./routes/router');
 
 var app = express();
@@ -63,7 +60,22 @@ passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
-mongoose.connect(config.database.url);
+// load db url
+try {
+  var config = require('./config');
+  var usingEnvDb = false;
+} catch (e) {
+  var config = process.env.MONGOLAB_URI;
+  var usingEnvDb = true;
+  console.log(e);
+  console.log('DB url in use :' + config);
+}
+
+if (!usingEnvDb) {
+  mongoose.connect(config.database.url);
+} else {
+  mongoose.connect(config);
+}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
